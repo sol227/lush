@@ -1,8 +1,41 @@
+// intro scrollTo
+gsap.registerPlugin(ScrollToPlugin);
+
+function getSamePageAnchor(link) {
+  if (
+    link.protocol !== window.location.protocol ||
+    link.host !== window.location.host ||
+    link.pathname !== window.location.pathname ||
+    link.search !== window.location.search
+  ) {
+    return false;
+  }
+  return link.hash;
+}
+
+function scrollToHash(hash, e) {
+  const elem = hash ? document.querySelector(hash) : false;
+  if (elem) {
+    if (e) e.preventDefault();
+    gsap.to(window, { scrollTo: elem });
+  }
+}
+document.querySelectorAll("a[href]").forEach((a) => {
+  a.addEventListener("click", (e) => {
+    scrollToHash(getSamePageAnchor(a), e);
+  });
+});
+scrollToHash(window.location.hash);
+
 // project scrolltrigger
 gsap.registerPlugin(ScrollTrigger);
 
 // intro 이미지 축소하기
 const intro = gsap.timeline();
+const introGif = gsap.timeline();
+const ending = gsap.timeline();
+const endGif = gsap.timeline();
+
 intro.from(".intro_bg img", {
   scale: 1,
   width: "100vw",
@@ -18,6 +51,49 @@ ScrollTrigger.create({
   pin: true,
   markers: false,
   anticipatePin: 1,
+});
+
+introGif.from(".intro_gif", {
+  opacity: 0,
+});
+
+ScrollTrigger.create({
+  animation: introGif,
+  trigger: ".intro_gif",
+  start: "top top",
+  end: "bottom top",
+  scrub: true,
+  anticipatePin: 1,
+});
+
+// ending
+ending.from(".ending_bg img", {
+  scale: 1,
+  width: "100vw",
+  height: "100vh",
+});
+
+ScrollTrigger.create({
+  animation: ending,
+  trigger: ".ending_bg",
+  start: "top top",
+  end: "bottom top",
+  scrub: true,
+  pin: true,
+  markers: false,
+  anticipatePin: 1,
+});
+
+endGif.from(".end_gif", {
+  opacity: 0,
+});
+
+ScrollTrigger.create({
+  animation: endGif,
+  trigger: ".end_gif",
+  start: "top top",
+  end: "bottom top",
+  scrub: true,
 });
 
 // history 제목
@@ -112,7 +188,7 @@ gsap.to(".product_New", {
   duration: 1,
   scrollTrigger: {
     trigger: ".product_New",
-    start: "top bottom", // 첫 번째 요소의 시작 지점
+    start: "top bottom",
   },
 });
 gsap.to(".product_olive", {
@@ -121,7 +197,7 @@ gsap.to(".product_olive", {
   duration: 1,
   scrollTrigger: {
     trigger: ".product_olive",
-    start: "top bottom", // 첫 번째 요소의 시작 지점
+    start: "top bottom",
   },
 });
 gsap.to(".product_magnaminty", {
@@ -130,7 +206,7 @@ gsap.to(".product_magnaminty", {
   duration: 1,
   scrollTrigger: {
     trigger: ".product_magnaminty",
-    start: "top bottom", // 첫 번째 요소의 시작 지점
+    start: "top bottom",
   },
 });
 gsap.to(".product_charcoal", {
@@ -139,7 +215,7 @@ gsap.to(".product_charcoal", {
   duration: 1,
   scrollTrigger: {
     trigger: ".product_charcoal",
-    start: "top bottom", // 첫 번째 요소의 시작 지점
+    start: "top bottom",
   },
 });
 gsap.to(".product_intergalactic", {
@@ -148,7 +224,7 @@ gsap.to(".product_intergalactic", {
   duration: 1,
   scrollTrigger: {
     trigger: ".product_intergalactic",
-    start: "top bottom", // 첫 번째 요소의 시작 지점
+    start: "top bottom",
   },
 });
 gsap.to(".product_power", {
@@ -157,7 +233,7 @@ gsap.to(".product_power", {
   duration: 1,
   scrollTrigger: {
     trigger: ".product_power",
-    start: "top bottom", // 첫 번째 요소의 시작 지점
+    start: "top bottom",
   },
 });
 gsap.to(".product_sexbomb", {
@@ -166,39 +242,81 @@ gsap.to(".product_sexbomb", {
   duration: 1,
   scrollTrigger: {
     trigger: ".product_sexbomb",
-    start: "top bottom", // 첫 번째 요소의 시작 지점
+    start: "top bottom",
   },
 });
 
 //gift
 gsap.to("textpath", {
-  start: "top 80%", // 스크롤 위치가 뷰포트의 80%에 도달하면 시작
-  end: "top 20%", // 스크롤 위치가 뷰포트의 20%에 도달하면 종료
-  attr: { startOffset: "40%" }, // 텍스트의 시작 오프셋을 조절하여 텍스트의 위치를 조절
-  ease: "power1.inOut", // 애니메이션의 이징 조절
+  start: "top 80%",
+  end: "top 20%",
+  attr: { startOffset: "40%" },
+  ease: "power1.inOut",
   scrollTrigger: {
     trigger: "textPath",
-    scrub: true, // 스크롤 속도에 따라 애니메이션 속도 조절
+    scrub: true,
   },
 });
 
-// ending
+// campaign
+const hide = (item) => {
+  gsap.set(item, { autoAlpha: 0 });
+};
 
-// intro 이미지 축소하기
-const ending = gsap.timeline();
-ending.from(".ending_bg img", {
-  scale: 1,
-  width: "100vw",
-  height: "100vh",
+const animate = (item) => {
+  let x = 0;
+  let y = 0;
+  let delay = item.dataset.delay;
+
+  if (item.classList.contains("txtL")) {
+    x = -100;
+    y = 0;
+  } else if (item.classList.contains("txtU")) {
+    x = 0;
+    y = 150;
+  } else if (item.classList.contains("txtR")) {
+    x = 100;
+    y = 0;
+  } else {
+    x = 0;
+    y = -100;
+  }
+
+  gsap.fromTo(
+    item,
+    { autoAlpha: 0, x: x, y: y },
+    {
+      autoAlpha: 1,
+      x: 0,
+      y: 0,
+      delay: delay,
+      duration: 1.25,
+      overwrite: "auto",
+      ease: "expo",
+    }
+  );
+};
+
+gsap.utils.toArray(".reveal").forEach((item) => {
+  hide(item);
+  ScrollTrigger.create({
+    trigger: item,
+    start: "top bottom",
+    end: "bottom top",
+    markers: false,
+    onEnter: () => {
+      animate(item);
+    },
+  });
 });
 
-ScrollTrigger.create({
-  animation: ending,
-  trigger: ".ending_bg",
-  start: "top top",
-  end: "bottom top",
-  scrub: true,
-  pin: true,
-  markers: false,
-  anticipatePin: 1,
+// scrollSmoder lenis
+const lenis = new Lenis();
+
+lenis.on("scroll", ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
 });
+
+gsap.ticker.lagSmoothing(0);

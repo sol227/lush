@@ -5,9 +5,17 @@
   <meta charset="UTF-8">
   <title>LUSH - Fresh Handmade Cosmetics</title>
   <!-- og -->
+  <meta property="og:title" content="LUSH - Fresh Handmade Cosmetics" />
+  <meta property="og:url" content="https://sol227.github.io/lush/" />
+  <meta property="og:image" content="./lush.png" />
+  <meta property="og:description" content="러쉬가 궁금하시다면 들어오세요:)" />
 
   <!-- favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/sol_favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="manifest" href="./favicon/manifest.json">
 
   <!-- 구글 아이콘 -->
   <link rel="stylesheet"
@@ -16,12 +24,7 @@
   <!-- font -->
   <link href="https://webfontworld.github.io/sunn/SUIT.css" rel="stylesheet">
 
-  <!-- jQuary -->
-  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="./aos.css"> -->
-
   <!-- css -->
-
   <!-- reset -->
   <link rel="stylesheet" href="./reset.css">
   <!-- style -->
@@ -32,14 +35,28 @@
 <body>
   <!-- header -->
   <header class="header">
-    <h1 class="logo"><a href="#"><img src="./assets/images/logo.svg" alt="러쉬 로고"></a></h1>
+    <h1 class="logo"><a href="./index.html">
+        <!-- <img src="./assets/images/logo.svg" alt="러쉬 로고" id="logo_svg"> -->
+        <svg viewBox="0 0 81 21" fill="#000" xmlns="http://www.w3.org/2000/svg" id="logo_svg">
+          <path d="M0 0.4767V20.5222H15.3446V15.3856H6.2984V0.4767H0Z" class="logo_color" />
+          <path
+            d="M36.4464 12.7733C36.4464 18.333 33.3836 20.999 27.1429 20.999C20.9032 20.999 17.8095 18.333 17.8095 12.7733V0.4767H24.1079V11.3978C24.1079 13.4474 24.1079 16.001 27.1706 16.001C30.148 16.001 30.148 13.4463 30.148 11.3978V0.4767H36.4453V12.7733H36.4464Z"
+            class="logo_color" />
+          <path
+            d="M45.9975 13.7854C45.9975 14.2905 46.084 14.7388 46.227 15.1042C46.685 16.3118 48.06 16.5637 49.2332 16.5637C50.2633 16.5637 51.839 16.2277 51.839 14.7388C51.839 13.7004 50.9508 13.42 47.428 12.4372C44.1934 11.5384 40.4998 10.669 40.4998 6.6255C40.4998 1.9929 44.5361 0 48.7453 0C53.1809 0 57.104 1.6569 57.278 6.5415H51.3213C51.4355 5.7834 51.0885 5.2773 50.5772 4.94235C50.0637 4.57695 49.3474 4.43625 48.7176 4.43625C47.8571 4.43625 46.4544 4.6599 46.4544 5.7834C46.5686 7.21665 49.4905 7.5243 52.3813 8.31075C55.2732 9.09615 58.1374 10.416 58.1374 14.0941C58.1374 19.3158 53.2396 21 48.6887 21C46.3701 21 39.7578 20.1852 39.6991 13.7854H45.9975Z"
+            class="logo_color" />
+          <path
+            d="M73.8845 0.4767V7.43925H67.9843V0.4767H61.6859V20.5222H67.9843V12.5769H73.8845V20.5222H80.1818V0.4767H73.8845Z"
+            class="logo_color" />
+        </svg>
+      </a></h1>
   </header>
-  <main>
+  <main class="main" id="main">
     <!-- 메인 인트로 -->
     <section class="intro" id="intro">
       <div class="intro_bg flex">
-        <img src="./assets/images/intro_bg.jpg" alt="인트로 이미지">
-        <!-- <img src="" alt="인트로 일러스트 gif"> -->
+        <img src="./assets/images/intro_bg.jpg" alt="인트로 이미지" class="intro_img">
+        <img src="./assets/images/intro_art.gif" alt="인트로 일러스트 gif" class="intro_gif">
       </div>
       <div class="intro_main">
         <div class="intro_txt flex">
@@ -50,13 +67,7 @@
           </div>
           <div class="flex info_wrap">
             <p class="info">
-              러쉬는 자연에서 얻은 신선한 재료와 동물 실험을 하지 않는 정직한 재료를 사용하여 모든 제품을 손으로 만듭니다. 러쉬는 어떤 이유에서도 제품을 동물 실험 하지 않고, 동물 실험을 거친 원재료
-              조차
-              사용하지 않습니다.
-              러쉬는 배쓰 밤, 샤워 젤리, 고체 샴푸와 같은 기발하고 혁신적인 제품을 선보입니다. 신선함은 러쉬 철학의 핵심입니다. 이 모든 것은 ‘고객은 항상 옳다’는 믿음과 러쉬의 핵심 가치인
-              직원들의
-              진심이
-              모여 얻은 결실입니다!</p>
+              since 1995</p>
             <div class="intro_more more flex more_flex">
               <a href="https://weare.lush.co.kr/lush_info.html" target="_blank">
                 <span class="material-symbols-outlined">arrow_forward</span>
@@ -66,11 +77,10 @@
           </div>
         </div>
         <div class="intro_arrow">
-          <a href="#">
+          <a href="#history">
             <img src="./assets/images/intro_arrow_down.svg" alt="곡선 아래 화살표">
           </a>
         </div>
-
       </div>
       <div class="intro_sub_ani">
         <div class="img_wrap">
@@ -96,10 +106,12 @@
       <div class="history_imgs flex">
         <img src="./assets/images/history_left2.jpg" alt="제조" class="poole_img">
         <img src="./assets/images/history_main.jpg" alt="창업자 흑백" class="people">
-        <img src="./assets/images/history_lush.jpeg" alt="수확" class="lush_img">
+        <img src="./assets/images/history_lush2.jpg" alt="수확" class="lush_img">
       </div>
       <div class="bubbles">
-        <!-- <img src="" alt="버블 gif"> -->
+        <img src="./assets/images/bubble1.png" alt="버블1">
+        <img src="./assets/images/bubble2.png" alt="버블2">
+        <img src="./assets/images/bubble3.png" alt="버블3">
       </div>
       <div class="history_txts">
         <h4 class="sub_title">
@@ -111,7 +123,7 @@
         <p>현재 전국 70여 개 매장(*스파 매장 2개)와 디지털 채널을 통해 러쉬의 철학이 담긴 제품과 긍정의 에너지를 나누고 있습니다.</p>
       </div>
       <div class="history_more more_flex more flex">
-        <a href=https://weare.lush.co.kr/lush_history.html">
+        <a href="https://weare.lush.co.kr/lush_history.html" target="_blank">
           <span class="material-symbols-outlined">
             arrow_forward
           </span>
@@ -119,15 +131,15 @@
         <p class="more_txt">LUSH의 역사 더 자세하게</p>
       </div>
       <div class="slider_imgs flex">
-        <img src="./assets/images/history_shower.png" alt="샤워">
         <img src="./assets/images/history_hair.png" alt="헤어">
-        <img src="./assets/images/history_face.png" alt="face">
-        <img src="./assets/images/history_fragrance.png" alt="향수">
-        <img src="./assets/images/history_bath.png" alt="bath">
-        <img src="./assets/images/history_soap.jpg" alt="비누">
-        <img src="./assets/images/history_coconut.jpg" alt="코코넛">
         <img src="./assets/images/history_body.png" alt="body">
         <img src="./assets/images/history_soap2.jpg" alt="연보라 비누">
+        <img src="./assets/images/history_shower.png" alt="샤워">
+        <img src="./assets/images/history_soap.jpg" alt="비누">
+        <img src="./assets/images/history_bath.png" alt="bath">
+        <img src="./assets/images/history_fragrance.png" alt="향수">
+        <img src="./assets/images/history_coconut.jpg" alt="코코넛">
+        <img src="./assets/images/history_face.png" alt="face">
       </div>
     </section>
     <!-- 러쉬 픽 제품 -->
@@ -135,57 +147,67 @@
       <h3 class="font_lush title">lush pick !</h3>
       <ul class="products flex">
         <li class="product product_wasabi">
-          <img src="./assets/images/lush_wasabi.png" alt="와사비 샨 쿠이">
-          <div class="lush_item wasabi flex">
+          <img src="./assets/images/lush_wasabi.png" alt="와사비 샨 쿠이" class="wasabi_img">
+          <div class="lush_item wasabi">
             <ul class="txts">
-              <li>와사비 샨 쿠이</li>
               <li>샴푸</li>
+              <li class="name">와사비 샨 쿠이</li>
               <li>&#8361; 26,000</li>
             </ul>
+          </div>
+          <div class="hover_bg hover_bgL flex">
             <div class="vegan font_lush">vegan</div>
           </div>
         </li>
         <li class="product product_New">
-          <img src="./assets/images/lush_new.png" alt="뉴 샴푸바">
-          <div class="lush_item New flex">
+          <img src="./assets/images/lush_new.png" alt="뉴 샴푸바" class="New_img">
+          <div class="lush_item New">
             <ul class="txts">
-              <li>뉴</li>
               <li>샴푸 바</li>
+              <li class="name">뉴</li>
               <li>&#8361; 19,000</li>
             </ul>
+          </div>
+          <div class="hover_bg hover_bgR flex">
             <div class="vegan font_lush">vegan</div>
           </div>
         </li>
         <li class="product product_olive">
-          <img src="./assets/images/lush_olive.png" alt="더 올리브">
-          <div class="lush_item olive flex">
+          <img src="./assets/images/lush_olive.png" alt="더 올리브" class="olive_img">
+          <div class="lush_item olive">
             <ul class="txts">
-              <li>더 올리브 브랜치</li>
               <li>샴푸 젤</li>
+              <li class="name">더 올리브 브랜치</li>
               <li>&#8361; 17,000</li>
             </ul>
+          </div>
+          <div class="hover_bg hover_bgL flex">
             <div class="vegan font_lush">vegan</div>
           </div>
         </li>
         <li class="product product_magnaminty">
-          <img src="./assets/images/lush_magnaminty.png" alt="마스크 오브 매그너민티">
-          <div class="lush_item magnaminty flex">
+          <img src="./assets/images/lush_magnaminty.png" alt="마스크 오브 매그너민티" class="mag_img">
+          <div class="lush_item magnaminty">
             <ul class="txts">
-              <li>마스크 오브 매그너민티</li>
               <li>파워 마스크</li>
+              <li class="name">마스크 오브 매그너민티</li>
               <li>&#8361; 22,000</li>
             </ul>
+          </div>
+          <div class="hover_bg hover_bgR flex">
             <div class="made font_suit">국내제조</div>
           </div>
         </li>
         <li class="product product_charcoal">
-          <img src="./assets/images/lush_charcoal.png" alt="챠콜">
-          <div class="lush_item charcoal flex">
+          <img src="./assets/images/lush_charcoal.png" alt="챠콜" class="charcoal_img">
+          <div class="lush_item charcoal">
             <ul class="txts">
-              <li>챠콜</li>
               <li>페이셜 솝</li>
+              <li class="name">챠콜</li>
               <li>&#8361; 22,000</li>
             </ul>
+          </div>
+          <div class="hover_bg hover_bgL flex">
             <div class="marks flex">
               <div class="made font_suit">국제제조</div>
               <div class="vegan font_lush">vegan</div>
@@ -193,35 +215,41 @@
           </div>
         </li>
         <li class="product product_intergalactic">
-          <img src="./assets/images/lush_intergalactic.png" alt="인터갈락틱">
-          <div class="lush_item intergalactic flex">
+          <img src="./assets/images/lush_intergalactic.png" alt="인터갈락틱" class="inter_img">
+          <div class="lush_item intergalactic">
             <ul class="txts">
-              <li>인터갈락틱</li>
               <li>버블 바</li>
+              <li class="name">인터갈락틱</li>
               <li>&#8361; 22,000</li>
             </ul>
+          </div>
+          <div class="hover_bg hover_bgR flex">
             <div class="new font_suit">new</div>
           </div>
         </li>
         <li class="product product_power">
-          <img src="./assets/images/lush_power.png" alt="파워">
-          <div class="lush_item power flex">
+          <img src="./assets/images/lush_power.png" alt="파워" class="power_img">
+          <div class="lush_item power">
             <ul class="txts">
-              <li>파워</li>
               <li>헤어 컨디셔너</li>
+              <li class="name">파워</li>
               <li>&#8361; 28,000</li>
             </ul>
+          </div>
+          <div class="hover_bg hover_bgL flex">
             <div class="vegan font_lush">vegan</div>
           </div>
         </li>
         <li class="product product_sexbomb">
-          <img src="./assets/images/lush_sexbomb.png" alt="섹스밤">
-          <div class="lush_item sexbomb flex">
+          <img src="./assets/images/lush_sexbomb.png" alt="섹스밤" class="sexbomb_img">
+          <div class="lush_item sexbomb">
             <ul class="txts">
-              <li>섹스 밤</li>
               <li>보디 스프레이</li>
+              <li class="name">섹스 밤</li>
               <li>&#8361; 60,000</li>
             </ul>
+          </div>
+          <div class="hover_bg hover_bgR flex">
             <div class="marks flex">
               <div class="folar font_suit">플로럴</div>
               <div class="vegan font_lush">vegan</div>
@@ -237,8 +265,12 @@
     </section>
     <!-- 러쉬 기프트 박스 -->
     <section class="gift">
+      <div class="bubbles">
+        <img src="./assets/images/bubble1.png" alt="버블1">
+        <img src="./assets/images/bubble2.png" alt="버블2">
+        <img src="./assets/images/bubble3.png" alt="버블3">
+      </div>
       <div class="gift_box">
-        <!-- <img src="" alt="버블 gif"> -->
         <svg width="750" height="660" viewBox="-95 -70 730 400" class="svg">
           <path id="curve"
             d="M0.5 418.5V261.5C6 179.833 67.9 13.5001 271.5 1.50006C355.833 -3.83328 531.8 40.7001 561 261.5V418.5" />
@@ -248,7 +280,9 @@
           </text>
         </svg>
         <!-- <h3 class="title">환경을 배려한 선물은 긴 여운을 남길 거예요</h3> -->
-        <img src="./assets/images/gift_btob.jpg" alt="기프트 gif" class="gift_img">
+        <div class="gift_img_bg">
+          <img src="./assets/images/gift_main.gif" alt="기프트 gif" class="gift_img">
+        </div>
         <div class="gift_more more">
           <a href="https://www.lush.co.kr/m/categories/index/69" target="_blank">
             <p>LUSH<br> 선물하기</p>
@@ -266,25 +300,21 @@
     <section class="campaign">
       <div class="campaign_bg">
         <img src="./assets/images/campaign_bg.png" alt="버블 물">
-        <!-- <video autoplay loop muted controls><iframe
-            src="https://www.youtube.com/embed/dG-tmuL_3D0?si=a7cuz1_px32caVZC&amp;controls=0&amp;start=6"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe></video> -->
       </div>
       <div class="campaign_info">
-        <div class="campaign_title">
+        <div class="campaign_title reveal txtU">
           <h4 class="sub_title">캠페인</h4>
           <h3 class="main_title"><strong class="font_lush">lush</strong>로운 세상</h3>
         </div>
-        <div class="txts">
-          <p>러쉬의 기부는 크게 5개의 범주로 나뉩니다. 러쉬가 어떤 단체를 후원하고, 얼마나 많이 기부했는지, 각 범주가 세상의 변화를 어떻게 지원하고 있는지에 대한 자세한 내용을 만나볼 수 있습니다.
+        <div class="txts campaign_txts reveal txtU">
+          <p>러쉬의 기부는 크게 5개의 범주로 나뉩니다. 러쉬가 어떤 단체를 후원하고, 얼마나 많이 기부했는지, 각 범주가 세상의 변화를 어떻게 지원하고 있는지에 대한 자세한 내용을 만나볼 수
+            있습니다.
           </p>
           <p>러쉬의 모든 여정은 더 러쉬로운 세상을 만들기 위해 임하는 모든 것을 소중한 기회로 여깁니다.</p>
           <p>여기에서 재생가능한 비즈니스가 어떤 것인지, 러쉬가 세상에 어떤 긍정적인 영향을 미치고 있는지, 탄소 발자국, 그리고 긍정적인 탄소 손자국에 어떻게 영향을 미치는지 공유합니다.</p>
         </div>
-        <div class="campaign_more more flex">
-          <a href="#" target="_blank">
+        <div class="campaign_more more flex reveal txtU">
+          <a href="https://weare.lush.co.kr/campaign_donation.html" target="_blank">
             <span class="material-symbols-outlined">
               arrow_forward
             </span>
@@ -296,32 +326,32 @@
     <!-- 러쉬의 이념 정체성 -->
     <section class="brand">
       <div class="imgs">
-        <img src="./assets/images/lush_wasabi.png" alt="와사비">
-        <img src="./assets/images/brans_cosmetic.png" alt="코스메틱 워리어">
-        <img src="./assets/images/brand_lime.png" alt="lime">
-        <img src="./assets/images/brand_vanillary.png" alt="바닐리라">
+        <img src="./assets/images/lush_wasabi.png" alt="와사비" class="reveal">
+        <img src="./assets/images/brans_cosmetic.png" alt="코스메틱 워리어" class="reveal">
+        <img src="./assets/images/brand_lime.png" alt="lime" class="reveal">
+        <img src="./assets/images/brand_vanillary.png" alt="바닐리라" class="reveal">
       </div>
       <ul class="brand_info flex">
-        <li class="info">
+        <li class="info reveal txtL">
           <h4 class="info_title">동물과 자연과 사람이<br> 조화롭게 공존하는<br> 세상을 바라는</h4>
           <p class="info_txt">이는 환경, 동물, 인권을 위해 목소리를 높이는 직원들에 의해 실천되고 단체와의 캠페인 및 고객의 윤리 소비로 이어지며, 우리가 사는 세상을 더 나은
             곳으로
             변화시키고 있습니다.</p>
         </li>
-        <li class="info">
+        <li class="info reveal txtL">
           <h4 class="info_title">고객이 필요로 하는<br>
             제품을 제공하는</h4>
           <p class="info_txt">그 속에 담긴 철학과 가치를 지지하는 고객의 사랑과 응원이 지금의 러쉬를 성장시켰습니다.
             최근 전 세계 러쉬는 환경 문제 해결을 위해, 고객과 함께 보다 적극적인
             변화를 만들고 있습니다.</p>
         </li>
-        <li class="info">
+        <li class="info reveal txtR">
           <h4 class="info_title">공정한 환경 속에서<br>
             다양성을 존중&포용하는<br> 문화를 만드는</h4>
           <p class="info_txt">더 러쉬스러운 세상을 원하는 사람들, 비영리 단체를 돕고 싶은 사람들, 다양한 권리를 지지하는 사람들, 누군가의 자랑이자 자부심이 되고 싶은 사람들이 모인
             곳입니다.</p>
         </li>
-        <li class="info">
+        <li class="info reveal txtR">
           <h4 class="info_title">윤리적이고 공정하게<br>
             원재료를 얻을 것을<br>
             약속하는</h4>
@@ -329,10 +359,10 @@
             최근 전 세계 러쉬는 환경 문제 해결을 위해, 고객과 함께 보다 적극적인
             변화를 만들고 있습니다.</p>
         </li>
-        <li class="info">
+        <li class="info reveal txtU">
           <h4 class="main_title">우리가 사는 세상을 더 나은 곳으로<br> 변화 시키고 있는</h4>
           <div class="brand_more flex">
-            <a href="https://weare.lush.co.kr/">
+            <a href="https://weare.lush.co.kr/" target="_blank">
               <span class="material-symbols-outlined">
                 arrow_forward
               </span>
@@ -345,9 +375,8 @@
     <section class="ending">
       <!-- <div class="ending_bgColor"> -->
       <div class="ending_bg flex">
-        <img src="./assets/images/ending_bg2.png" alt="러쉬 제품 모음2">
-        <!-- <img src="" alt="인트로 일러스트 gif2"> -->
-      </div>
+        <img src="./assets/images/ending_bg2.png" alt="러쉬 제품 모음2" class="end_img">
+        <img src="./assets/images/ending_art.gif" alt="엔딩 일러스트 gif" class="end_gif">
       </div>
       <div class="ending_sub_ani">
         <div class="img_wrap">
@@ -355,7 +384,7 @@
           <img src="./assets/images/intro_txt_ani2.svg" alt="텍스트 svg2">
           <img src="./assets/images/intro_txt_ani3.svg" alt="텍스트 svg3">
         </div>
-        <!-- </div> -->
+      </div>
     </section>
   </main>
   <footer class="footer">
@@ -364,9 +393,9 @@
       <h4 class="font_lush">we believe lush</h4>
     </div>
     <ul class="info flex">
-      <li>COPYRIGHT © LUSH-HASOL.CO.LTD.ALL RIGHTS RESERVED. ️</li>
-      <li>Hasol' Portfolio</li>
-      <li>Work Book</li>
+      <li>COPYRIGHT © LUSH-HASOL.CO.LTD.ALL RIGHTS RESERVED.</li>
+      <li><a href="https://sol227.github.io/portfolio/" target="_blank">Hasol' Portfolio</a></li>
+      <li><a href="https://github.com/sol227/lush" target="_blank">Work Book</a></li>
       <li>24.01.05-24.01.22 / Made by Hasol Jeong</li>
     </ul>
     <!-- <button class="top_btn">
@@ -375,7 +404,11 @@
       </span>
     </button> -->
   </footer>
-
+  <div class="cursor" id="custom_cursor">
+    <div id="cursor-icon"></div>
+  </div>
+  <!-- 스크롤 스무더 -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
   <!-- gsap 플러그인 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
     integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
@@ -388,6 +421,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollToPlugin.min.js"
     integrity="sha512-gXXZigEOXAVnGZ2otmK1DqTFK/vF87A+x6Owjf5CN+zVxcg9bLg3F6J1s9yGnFFT08QLt7G0vI3XNWJVue260w=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- js -->
+  <script src="./custom-cursor.js"></script>
   <script src="./index.js"></script>
 </body>
 

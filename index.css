@@ -2,7 +2,6 @@
 
 /* 수트 폰트 font-family: 'SUIT'; */
 @import url("https://webfontworld.github.io/sunn/SUIT.css");
-
 /*    font-family: 'Lush'; */
 @font-face {
   font-family: "Lush";
@@ -12,10 +11,36 @@
   font-weight: normal;
   font-style: normal;
 }
+
 body {
   font-family: "SUIT", -apple-system, BlinkMacSystemFont, "Malgun Gothic",
     "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+  background-color: #000;
 }
+body::-webkit-scrollbar {
+  width: 12px;
+}
+body::-webkit-scrollbar-thumb {
+  width: 2px;
+  height: 15%;
+  background-color: #d9ff42;
+  border-radius: 20px;
+}
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::selection {
+		background-color: #d9ff42;
+		color: #8000ff;
+	}
+/* 스크롤 */
+html.lenis {
+  /* height: auto; */
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
 /* common */
 .flex {
   display: flex;
@@ -29,27 +54,34 @@ body {
 }
 .more_flex .material-symbols-outlined {
   padding: 50px;
-  border: 1px solid #8000ff;
+  border: 1px solid #fff;
   border-radius: 50%;
   transition: 0.3s;
 }
 .more_flex a:hover .material-symbols-outlined {
-  background-color: #8000ff;
-  color: #d9ff42;
+  background-color: #fff;
+  color: #8000ff;
 }
 .material-symbols-outlined {
   font-size: 2rem;
   font-weight: 500;
+}
+.more_flex a{
+  position: relative;
 }
 
 /* header */
 .header {
   z-index: 1000;
   position: fixed;
+  mix-blend-mode: difference;
 }
-.header .logo img {
-  width: 120px;
-  padding: 30px 35px;
+.header .logo svg {
+  /* font-size: 2rem; */
+  width: 130px;
+  padding: 30px 60px;
+  fill: #fff;
+  /* mix-blend-mode: ; */
 }
 /* intro */
 .intro {
@@ -58,6 +90,7 @@ body {
   overflow: hidden;
   position: relative;
   background-color: #fff;
+  z-index: 900;
 }
 .intro .intro_bg {
   width: 100%;
@@ -69,13 +102,23 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 50;
+  /* mix-blend-mode: hue; */
 }
-.intro .intro_bg img {
+.intro .intro_bg .intro_img {
   object-fit: cover;
   width: 45%;
   height: 100%;
   filter: grayscale(100%);
   transform: scale(0.92);
+}
+.intro .intro_bg .intro_gif {
+  object-fit: cover;
+  width: 45%;
+  height: 100%;
+  position: absolute;
+  /* filter: grayscale(100%); */
+  transform: scale(0.92);
+  opacity: 1;
 }
 .intro .intro_main {
   width: 100%;
@@ -110,14 +153,6 @@ body {
   /* transform: translateY(200px) rotate(5deg); */
   animation: introTitleMove 0.7s linear;
 }
-@keyframes introTitleMove {
-  0% {
-    transform: translateY(200px) rotate(10deg);
-  }
-  100% {
-    transform: translateY(0) rotate(0);
-  }
-}
 
 .intro .intro_main .intro_txt .title_wrap .fresh,
 .intro .intro_main .intro_txt .title_wrap .handmade {
@@ -130,14 +165,16 @@ body {
   width: 530px;
   flex-direction: column;
   gap: 30px;
-  color: #8000ff;
+  color: #fff;
+  mix-blend-mode: hue;
 }
 .intro .intro_main .intro_txt .info_wrap .info {
   /* width: 530px; */
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: 4.5rem;
+  font-weight: 700;
   line-height: 1.5;
   word-break: keep-all;
+  color: #fff;
 }
 .intro .intro_main .intro_txt .info_wrap .intro_more {
   /* width: 530px; */
@@ -178,7 +215,9 @@ body {
 .intro .intro_sub_ani img:nth-child(2) {
   animation: introMove2 35s linear infinite;
 }
-/* history */
+
+/***** history *****/
+
 .history {
   width: 100%;
   /* background-color: #8000ff; */
@@ -188,6 +227,7 @@ body {
   position: relative;
   box-sizing: border-box;
   padding-top: 360px;
+  z-index: 800;
 }
 .history .title_wrap {
   color: #d9ff42;
@@ -238,6 +278,7 @@ body {
   transform: scale(0.8);
   padding-top: 35px;
   /* overflow: hidden; */
+  /* z-index: 30; */
 }
 .history .history_imgs img:nth-child(1) {
   object-fit: cover;
@@ -291,6 +332,34 @@ body {
   line-height: 1.5;
   padding-bottom: 25px;
 }
+
+/* bubble */
+.history .bubbles {
+  position: relative;
+  top: -1350px;
+  /* left: 50px; */
+  animation: bubbleFadein 20s linear infinite;
+}
+.history .bubbles img {
+  width: 380px;
+  /* z-index: 50; */
+  position: absolute;
+}
+.history .bubbles img:nth-child(1) {
+  top: 530px;
+  left: 50px;
+  animation: bubbleMove1 3s ease-in-out infinite;
+}
+.history .bubbles img:nth-child(2) {
+  top: 720px;
+  right: 50px;
+  animation: bubbleMove1 2.5s ease-in-out infinite;
+}
+.history .bubbles img:nth-child(3) {
+  top: 900px;
+  left: 500px;
+  animation: bubbleMove2 2.5s ease-in-out infinite;
+}
 .history .history_more {
   width: 50%;
   max-width: 600px;
@@ -301,6 +370,7 @@ body {
   gap: 30px;
   /* color: #d9ff42; */
 }
+
 .history .history_more a .material-symbols-outlined {
   /* border: 1px solid #d9ff42; */
   background-color: #fff;
@@ -316,8 +386,8 @@ body {
 .history .slider_imgs {
   gap: 10px;
   padding: 250px 0 10px;
-  animation: historySlider 30s linear infinite;
-  filter: grayscale(20%);
+  animation: historySlider 15s linear infinite;
+  filter: grayscale(2%);
 }
 .history .slider_imgs img {
   width: 330px;
@@ -336,7 +406,10 @@ body {
   overflow: hidden;
   padding-top: 200px;
   background-color: #fff;
+  position: relative;
+  z-index: 700;
 }
+
 .lush_pick .title {
   font-size: 4.4rem;
   text-align: center;
@@ -353,55 +426,149 @@ body {
   gap: 15px;
   margin: 0 auto;
 }
+
+/* 제품 이미지 */
 .lush_pick .products .product {
   width: 300px;
-  height: 380px;
+  height: 420px;
   padding: 10px 30px 30px;
   box-sizing: border-box;
   background-color: #eee;
   opacity: 0;
+  overflow: hidden;
+  position: relative;
 }
 .lush_pick .products .product:nth-child(odd) {
   border-radius: 50px 0 0 0;
 }
-.lush_pick .products .product:nth-child(even) {
+.lush_pick .products .product:nth-child(even):nth-child(even) {
   border-radius: 0 50px 0 0;
 }
 .lush_pick .products .product img {
-  width: 100%;
-  /* margin: 0 auto; */
+  width: 480px;
+
+  /* transform: translate(-70px, -80px); */
 }
+.lush_pick .products .product .wasabi_img,
+.lush_pick .products .product .olive_img {
+  width: 550px;
+  transform: translate(-155px, -145px);
+}
+.lush_pick .products .product .New_img {
+  width: 515px;
+  transform: translate(-85px, -100px);
+}
+.lush_pick .products .product .mag_img {
+  width: 490px;
+  transform: translate(-95px, -85px);
+}
+.lush_pick .products .product .charcoal_img {
+  width: 525px;
+  transform: translate(-85px, -105px);
+}
+.lush_pick .products .product .inter_img {
+  width: 450px;
+  transform: translate(-55px, -65px);
+}
+.lush_pick .products .product .power_img {
+  width: 480px;
+  transform: translate(-85px, -80px);
+}
+.lush_pick .products .product .sexbomb_img {
+  width: 400px;
+  transform: translate(-90px, -80px);
+}
+/* 제품 텍스트 */
 .lush_pick .products .product .txts {
   line-height: 1.5;
+  text-align: center;
+  /* padding-top: 30px; */
+  transform: translateY(-200px);
 }
-.lush_pick .products .product .marks {
-  gap: 5px;
+.lush_pick .products .product .txts .name {
+  font-weight: 600;
 }
-.lush_pick .products .product .vegan,
-.lush_pick .products .product .new,
-.lush_pick .products .product .made,
-.lush_pick .products .product .folar {
-  font-size: 0.9rem;
+.lush_pick .products .product .wasabi,
+.lush_pick .products .product .olive {
+  transform: translateY(-50px);
+}
+.lush_pick .products .product .New {
+  transform: translateY(-15px);
+}
+.lush_pick .products .product .magnaminty {
+  transform: translateY(10px);
+}
+.lush_pick .products .product .charcoal {
+  transform: translateY(-30px);
+}
+.lush_pick .products .product .intergalactic {
+  transform: translateY(45px);
+}
+.lush_pick .products .product .power {
+  transform: translateY(20px);
+}
+.lush_pick .products .product .sexbomb {
+  transform: translateY(100px);
+}
+
+/* 마우스 오버 */
+.lush_pick .products .product .hover_bg {
+  width: 300px;
+  height: 420px;
+  box-sizing: border-box;
+  background-color: #d9ff42b7;
+  overflow: hidden;
+  z-index: 60;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(420px);
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+.lush_pick .products .product:hover .hover_bg {
+  transform: translateY(0);
+}
+.lush_pick .products .product .hover_bgL {
+  border-radius: 50px 0 0 0;
+}
+.lush_pick .products .product .hover_bgR {
+  border-radius: 0 50px 0 0;
+}
+.lush_pick .products .product .hover_bg .vegan,
+.lush_pick .products .product .hover_bg .new,
+.lush_pick .products .product .hover_bg .made,
+.lush_pick .products .product .hover_bg .folar {
+  font-size: 1.2rem;
   text-transform: uppercase;
   background-color: #000;
-  width: 65px;
-  height: 65px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   text-align: center;
-  line-height: 4.5;
+  line-height: 6.5;
   color: #fff;
   box-sizing: border-box;
 }
-.lush_pick .products .product .vegan {
-  font-size: 0.75rem;
-  line-height: 5.5;
+.lush_pick .products .product .hover_bg .vegan {
+  font-size: 1.1rem;
+  line-height: 7;
 }
-.lush_pick .products .product .lush_item {
-  justify-content: space-between;
-  align-items: center;
+.lush_pick .products .product .hover_bg .marks {
+  gap: 5px;
 }
-.lush_pick .lush_more {
+.lush_pick .products .product .hover_bg .marks .folar,
+.lush_pick .products .product .hover_bg .marks .vegan,
+.lush_pick .products .product .hover_bg .marks .made {
+  width: 100px;
+  height: 100px;
+  line-height: 5.3;
 }
+.lush_pick .products .product .hover_bg .marks .vegan {
+  line-height: 5.8;
+}
+
 .lush_pick .lush_more .more_flex {
   display: block;
   font-size: 0.9rem;
@@ -412,7 +579,6 @@ body {
   padding: 58px 0;
   margin: 100px auto 0;
   text-align: center;
-  /* border: 1px solid #8000ff; */
   background-color: #8000ff;
   color: #d9ff42;
   border-radius: 50%;
@@ -423,37 +589,6 @@ body {
   background-color: #d9ff42;
   color: #8000ff;
 }
-/* .lush_pick .lush_more .more_flex::after {
-  content: "";
-  display: block; 
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
-  border: 1px solid #000;
-  background-color: #000;
-  border-radius: 50%;
-  position: absolute;
-  top: 150px;
-  left: 0;
-  transition: 0.3s;
-} */
-/* .lush_pick .lush_more .more_flex:hover::after {
-  content: "LUSH 제품 \A 더보기";
-  white-space: pre;
-  display: inline-block;
-  width: 150px;
-  height: 150px;
-  padding: 58px 0;
-  border: 1px solid #000; 
-  background-color: #000;
-  color: #fff;
-  border-radius: 50%;
-  margin: 0 auto;
-  position: absolute;
-  top: -1px;
-  left: 0;
-  box-sizing: border-box;
-} */
 
 /* gift */
 .gift {
@@ -462,6 +597,9 @@ body {
   padding-top: 250px;
   color: #8000ff;
   background-color: #fff;
+  position: relative;
+  z-index: 650;
+  overflow: hidden;
 }
 .gift .gift_box {
   position: relative;
@@ -474,6 +612,13 @@ body {
   position: relative;
   top: 0;
 } */
+/* .gift .gift_box .gift_img_bg{
+  width: 600px;
+  height: 850px;
+  border-radius: 500px 500px 0 0;
+  margin: 0 auto;
+  background-color: #8000ff;
+} */
 .gift .gift_box .gift_img {
   display: block;
   object-fit: cover;
@@ -481,6 +626,8 @@ body {
   height: 850px;
   border-radius: 500px 500px 0 0;
   margin: 0 auto;
+  /* opacity: 0.5; */
+  /* mix-blend-mode: multiply; */
 }
 /* 패스 */
 .gift .gift_box .svg {
@@ -535,15 +682,46 @@ body {
 .gift .gift_box .txts p {
   padding: 15px 0;
 }
+
+/* bubble */
+.gift .bubbles {
+  position: relative;
+  top: -500px;
+  /* left: 50px; */
+  animation: bubbleFadein 20s linear infinite;
+}
+.gift .bubbles img {
+  width: 380px;
+  /* z-index: 50; */
+  position: absolute;
+
+}
+.gift .bubbles img:nth-child(1) {
+  top: 530px;
+  left: 50px;
+  animation: bubbleMove1 3s ease-in-out infinite;
+}
+.gift .bubbles img:nth-child(2) {
+  top: 720px;
+  right: 50px;
+  animation: bubbleMove1 2.5s ease-in-out infinite;
+}
+.gift .bubbles img:nth-child(3) {
+  top: 900px;
+  left: 500px;
+  animation: bubbleMove2 2.5s ease-in-out infinite;
+}
+
 /* campaign */
 .campaign {
   width: 100%;
   height: 100vh;
-  padding-top: 150px;
+  /* padding-top: 50px; */
   box-sizing: border-box;
   color: #fff;
   background-color: #fff;
   position: relative;
+  z-index: 550;
 }
 .campaign .campaign_bg {
   object-fit: cover;
@@ -567,7 +745,7 @@ body {
 }
 .campaign .campaign_info {
   position: absolute;
-  top: 38%;
+  top: 23%;
   right: 13%;
 }
 .campaign .campaign_info .campaign_title {
@@ -626,8 +804,11 @@ body {
   width: 100%;
   height: 1500px;
   padding: 100px 0 550px;
+  /* margin-top: 80px; */
   background-color: #000;
   color: #fff;
+  position: relative;
+  z-index: 400;
 }
 .brand .imgs {
   width: 600px;
@@ -643,21 +824,21 @@ body {
 }
 .brand .imgs img:nth-child(1) {
   z-index: -10;
-  top: 0;
+  top: -95px;
 }
 .brand .imgs img:nth-child(2) {
   z-index: -20;
-  top: 179px;
-  left: -25px;
+  top: 85px;
+  left: -30px;
 }
 .brand .imgs img:nth-child(3) {
   z-index: -30;
-  top: 405px;
-  left: -33px;
+  top: 308px;
+  left: -36px;
 }
 .brand .imgs img:nth-child(4) {
   z-index: -40;
-  top: 635px;
+  top: 535px;
   left: 0;
 }
 .brand .brand_info {
@@ -692,7 +873,7 @@ body {
   right: 75px;
 }
 .brand .brand_info .info:nth-child(5) {
-  top: 1300px;
+  top: 1250px;
   left: 90px;
 }
 .brand .brand_info .info .info_title {
@@ -749,6 +930,7 @@ body {
   position: relative;
   background-color: #fff;
   border-radius: 0 0 120px 120px;
+  z-index: 300;
 }
 /* .ending .ending_bgColor{
   background-color: ;
@@ -765,13 +947,21 @@ body {
   align-items: center;
   z-index: 150;
 }
-.ending .ending_bg img {
+.ending .ending_bg .end_img {
   object-fit: cover;
   vertical-align: 100%;
   width: 45%;
   height: 100%;
   filter: grayscale(100%);
   transform: scale(0.92);
+}
+.ending .ending_bg .end_gif {
+  object-fit: cover;
+  vertical-align: 100%;
+  width: 45%;
+  height: 100%;
+  transform: scale(0.92);
+  position: absolute;
 }
 
 /* text ani */
@@ -781,8 +971,10 @@ body {
   /* position: absolute; */
   /* top: 100px; */
   position: absolute;
-  top: 1270px;
+  top: 1230px;
+  /* bottom: -100px; */
   /* z-index: 150; */
+  /* padding-top: 500px; */
 }
 .ending .ending_sub_ani .img_wrap {
   transform: rotate(-8deg);
@@ -800,7 +992,7 @@ body {
 /* footer */
 .footer {
   width: 100%;
-  height: 100vh;
+  height: 89vh;
   background-color: #000;
   color: #fff;
   padding: 150px;
@@ -808,7 +1000,7 @@ body {
   position: sticky;
   left: 0;
   bottom: 0;
-  z-index: -9999;
+  z-index: 0;
 }
 .footer .main_title {
   font-size: 2.8rem;
