@@ -16,6 +16,7 @@ body {
   font-family: "SUIT", -apple-system, BlinkMacSystemFont, "Malgun Gothic",
     "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
   background-color: #000;
+  /* cursor: none; */
 }
 body::-webkit-scrollbar {
   width: 12px;
@@ -30,9 +31,9 @@ body::-webkit-scrollbar-track {
   background-color: transparent;
 }
 ::selection {
-		background-color: #d9ff42;
-		color: #8000ff;
-	}
+  background-color: #d9ff42;
+  color: #8000ff;
+}
 /* 스크롤 */
 html.lenis {
   /* height: auto; */
@@ -66,7 +67,7 @@ html.lenis {
   font-size: 2rem;
   font-weight: 500;
 }
-.more_flex a{
+.more_flex a {
   position: relative;
 }
 
@@ -694,7 +695,6 @@ html.lenis {
   width: 380px;
   /* z-index: 50; */
   position: absolute;
-
 }
 .gift .bubbles img:nth-child(1) {
   top: 530px;
@@ -809,6 +809,8 @@ html.lenis {
   color: #fff;
   position: relative;
   z-index: 400;
+  /* overflow: hidden; */
+  /* box-sizing: border-box; */
 }
 .brand .imgs {
   width: 600px;
@@ -846,7 +848,7 @@ html.lenis {
   margin: 0 auto;
   padding: 25px;
   box-sizing: border-box;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-between;
   gap: 200px;
   position: relative;

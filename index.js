@@ -269,13 +269,13 @@ const animate = (item) => {
   let delay = item.dataset.delay;
 
   if (item.classList.contains("txtL")) {
-    x = -100;
+    x = -70;
     y = 0;
   } else if (item.classList.contains("txtU")) {
     x = 0;
     y = 150;
   } else if (item.classList.contains("txtR")) {
-    x = 100;
+    x = 70;
     y = 0;
   } else {
     x = 0;
